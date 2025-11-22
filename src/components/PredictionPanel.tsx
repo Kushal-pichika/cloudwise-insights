@@ -54,8 +54,8 @@ const PredictionPanel = ({ data }: PredictionPanelProps) => {
 
   return (
     <div>
-      <h2 className="text-2xl font-bold mb-4 text-foreground">Predictions</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <h2 className="text-xl sm:text-2xl font-bold mb-4 text-foreground">Predictions</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
         {metrics.map((metric) => (
           <Card key={metric.title} className="shadow-card hover:shadow-hover transition-all">
             <CardHeader className="pb-3">
@@ -67,7 +67,7 @@ const PredictionPanel = ({ data }: PredictionPanelProps) => {
               </div>
             </CardHeader>
             <CardContent>
-              <p className={`text-3xl font-bold ${metric.color}`}>{metric.value}</p>
+              <p className={`text-2xl sm:text-3xl font-bold ${metric.color}`}>{metric.value}</p>
             </CardContent>
           </Card>
         ))}

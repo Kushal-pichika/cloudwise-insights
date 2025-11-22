@@ -11,21 +11,13 @@ interface ComparisonPanelProps {
 
 const ComparisonPanel = ({ data }: ComparisonPanelProps) => {
   if (!data) {
-    return (
-      <div className="space-y-6">
-        <div>
-          <h1 className="text-3xl font-bold mb-2 text-foreground">Model Comparison</h1>
-          <p className="text-muted-foreground">
-            Comparing black-box and white-box model predictions
-          </p>
-        </div>
-        <Card className="shadow-card">
-          <CardContent className="flex items-center justify-center h-64">
-            <p className="text-muted-foreground">Run a prediction to see comparison</p>
-          </CardContent>
-        </Card>
-      </div>
-    );
+  return (
+    <Card className="shadow-card">
+      <CardContent className="flex items-center justify-center h-64">
+        <p className="text-sm sm:text-base text-muted-foreground">Run a prediction to see comparison</p>
+      </CardContent>
+    </Card>
+  );
   }
 
   const cpuDiff = Math.abs(data.blackbox_pred.cpu - data.whitebox_pred.cpu);
@@ -33,15 +25,8 @@ const ComparisonPanel = ({ data }: ComparisonPanelProps) => {
   const timeDiff = data.shap_times.blackbox - data.shap_times.whitebox;
 
   return (
-    <div className="space-y-6">
-      <div>
-        <h1 className="text-3xl font-bold mb-2 text-foreground">Model Comparison</h1>
-        <p className="text-muted-foreground">
-          Trade-offs between performance and interpretability
-        </p>
-      </div>
-
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <div className="space-y-4 sm:space-y-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
         <Card className="shadow-card hover:shadow-hover transition-shadow border-primary/20">
           <CardHeader>
             <div className="flex items-center justify-between">
@@ -123,7 +108,7 @@ const ComparisonPanel = ({ data }: ComparisonPanelProps) => {
           <CardDescription>Key differences between model types</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
             <div className="p-4 bg-card rounded-lg shadow-sm">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-sm text-muted-foreground">CPU Difference</span>
