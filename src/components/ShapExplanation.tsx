@@ -13,15 +13,15 @@ const ShapExplanation = ({ summaryPlot, localPlot, featureContributions }: ShapE
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 sm:space-y-6">
       <div>
-        <h1 className="text-3xl font-bold mb-2 text-foreground">Explainability (SHAP)</h1>
-        <p className="text-muted-foreground">
+        <h1 className="text-2xl sm:text-3xl font-bold mb-2 text-foreground">Explainability (SHAP)</h1>
+        <p className="text-sm sm:text-base text-muted-foreground">
           Understanding how features influence predictions using SHAP values
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
         <Card className="shadow-card hover:shadow-hover transition-shadow">
           <CardHeader>
             <CardTitle>Global Feature Importance</CardTitle>
@@ -62,7 +62,7 @@ const ShapExplanation = ({ summaryPlot, localPlot, featureContributions }: ShapE
             <CardDescription>Top positive and negative contributors to the prediction</CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
               <div>
                 <h3 className="text-sm font-semibold text-primary mb-3">Top Positive Contributors</h3>
                 <div className="space-y-2">
